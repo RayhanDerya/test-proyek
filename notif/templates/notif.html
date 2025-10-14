@@ -1,0 +1,16 @@
+<li><a href="/">Home</a></li>
+{% if not notif %}
+<p>Belum ada notifikasi.</p>
+{% else %}
+
+{% for notif in notif %}
+<div>
+  <h2><a>{{ notif.sender }}</a></h2>
+
+  <p>{{ notif.message }}...</p>
+</div>
+
+<hr>
+{% endfor %}
+
+{% endif %}
