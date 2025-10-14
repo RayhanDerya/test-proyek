@@ -1,9 +1,17 @@
 <nav>
 
   <ul style="justify-content:center; display: flex;">
-    <li><a href="/">Home</a></li>
-    <li><a href="{% url 'notif:show_notif' %}">Notif</a></li>
-    <li><a href="{% url 'notif:create_notif' %}">Buat Notif</a></li>
-  </ul>
-
+    <a href="/">Home</a>
+    <a href="{% url 'notif:show_notif' %}" style="margin: 0 10px 0 10px;">Notif</a>
+    <a href="{% url 'notif:create_notif' %}">Buat Notif</a>
+    <a href="{% url 'notif:register' %}"> </a>
+    <a href="{% url 'notif:logout' %}">
+  <button>Logout</button>
+</a>
+  </ul> 
+  <style>
+    a {
+      margin: 10 px;
+    }
+  </style>
 </nav>
