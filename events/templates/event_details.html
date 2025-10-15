@@ -1,0 +1,14 @@
+<h1>{{ event.name }}</h1>
+<h2>{{ event.description }}</h2>
+<p>{{event.sport}}</p>
+<a href="{% url 'events:join_event' event.id %}">Join Now</a>
+<script>
+    fetch(`/events/{{ event.id }}/join/`, {
+  method: 'POST',
+  headers: {'X-CSRFToken': '{{ csrf_token }}'},
+})
+.then(response => response.json())
+.then(data => {
+  alert(data.message);
+})
+</script>

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if not events %}
+<h1>Belum ada Events</h1>
+{% else %}
+{% for event in events %}
+<div>
+    <h1>{{ event.name }}</h1>
+    <p>{{ event.description }}</p>
+    <p>{{event.sport}}</p>
+    <!-- <p>{{event.id}}</p> -->
+    <a href="{% url 'events:show_events_detail' event.id %}"> show details </a>
+</div>
+{% endfor %}
+{% endif %}
+{% endblock content %}
